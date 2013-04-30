@@ -1,4 +1,4 @@
-//I think we can get rid of the type,
+//I think we can get rid of the type, needs location
 #include "Item.h"
 #include <string>
 using std::string;

@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2013 annietupek. All rights reserved.
 //
-// need to fix the coordinate system either here to be y,x,z, or in coordinate class to be x,y,z 
+// need to fix the coordinate system either here to be y,x,z, or in coordinate class to be x,y,z. need to define field & gravel as coordinates, need to add in keys for entering buildings, locations for entering building, add in bounds for go up & go down commands  
 #include "character.h"
 #include <iostream>
 #include <string>
@@ -103,7 +103,7 @@ X:
         {
             cout << "The basement is neat and tidy.  Another Star of David fills the center of the room.  A comfortable looking chair and a plain desk are shoved against the wall.  A notebok is open on the desk, and the shelves behind the desk are filled with similar notebooks." << endl;
         }
-        else if (location ==4,-3,3)
+        else if (location ==4,-3,3)//in the silo, at top of ladder
         {
             cout << "You are at the highest goat's head.  It stinks something awful.  A swarm of flies buzzes around it.  You can see the glitter and shine of the Holy Hand Grenade clutched between the dead goat's teeth." << endl;
         }
@@ -136,7 +136,7 @@ X:
         cout << "You wipe the blood and bits of fur off the key and place the key in your pocket." << endl;
     }
     //Holy Hand Grenade
-    else if (command == "take grenade" || command == "grab grenade" || command == "pick up grenade" && location == 4,-3,3)
+    else if (command == "take holy hand grenade" || command == "grab holy hand grenade" || command == "pick up holy hand grenade" && location == 4,-3,3)
     {
         //acquire object-set object's bool to true
         cout << "You stretch out and take the Holy Hand Grenade from the goat's mouth.  It is slick with blood, and about the size and shape of a softball, except for the pin sticking out of a small cylinder on the top."<< endl;
@@ -150,6 +150,14 @@ X:
     else if (command == "read notebook" && location == -4,-1,-1)
     {
         cout << "The farmer's blocky handwriting is easy to read, espcially in the bright light of the basement.  The latest entry reads:\n\"They're coming for me.  They'll come at night.  They always come at night.  I have hidden the Holy Hand Grenade in the silo, inside the highest goat's head.  It needs one more sacrifice for full potency.  I don't know if my old limbs will be able to make that climb again.  But, I must do it.  Tonight.\nI will pull the Holy Hand Grenade's pin and count to three.  Three shall be the count and the number of the count shall be three.  Then, the grenade will do its duty and take me along to the grave with the vampire bunnies and the girl.  It is what I deserve.\""<< endl;
+    }
+    else if (command == "use holy hand grenade")
+    {
+        cout << "You pull the pin.  One.  Two.  Three.  BOOM!" << endl;
+    }
+    else // to catch all other commands
+    {
+        cout << "I did not understand your command.  Please see the help information for the commands I do understand." << endl;
     }
     goto X;
 

@@ -1,3 +1,4 @@
+//I think we can get rid of type, item needs location
 #ifndef ITEM
 #define ITEM
 #include "Coordinate.h"
