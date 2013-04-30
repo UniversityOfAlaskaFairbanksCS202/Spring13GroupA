@@ -1,3 +1,4 @@
+//I think we can get rid of the questions for character creation, as well as stats for orthodoxy, strength, & intelligence & only use the hp, also, we need a bool for the key items so that the player can get into the garage w the garagedoor opener & into the farmhouse with the house key
 #include "Character.h"
 #include "Item.h"
 #include <iostream>
@@ -236,7 +237,7 @@ character character_create()
     return PC;
 }
 
-
+//player movement functions
 void character::north()
 {
     ++y_coordinate;

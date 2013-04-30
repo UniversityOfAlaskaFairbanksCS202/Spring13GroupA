@@ -1,3 +1,4 @@
+//I think we can get rid of the type,
 #include "Item.h"
 #include <string>
 using std::string;
