@@ -11,14 +11,14 @@ using std::cout;
 class monster : public Coordinate
 {
 public:
-	monster();
-	monster(int h, int a, string n);
-	void attack(character& PC);
-	string console_display_name();
+    monster();
+    monster(int h, int a, string n);
+    void attack(character& PC);
+    string console_display_name();
 protected:
-	int hp;
-	int damage;
-	string name;
+    int hp;
+    int damage;
+    string name;
 };
 
 #endif
@@ -29,8 +29,8 @@ protected:
 class goat_master : public monster
 {
 public:
-	goat_master(int h, int a, string n);
-	void attack(character& PC);
+    goat_master(int h, int a, string n);
+    void attack(character& PC);
 private:
 };
 
