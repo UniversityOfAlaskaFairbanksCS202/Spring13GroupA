@@ -1,37 +1,51 @@
-#ifndef MONSTER
-#define MONSTER
-
-#include "Coordinate.h"
-#include "Character.h"
-#include <string>
-using std::string;
-#include <iostream>
-using std::cout;
-
-class monster : public Coordinate
-{
-public:
-    monster();
-    monster(int h, int a, string n);
-    void attack(character& PC);
-    string console_display_name();
-protected:
-    int hp;
-    int damage;
-    string name;
-};
-
-#endif
-
-#ifndef GOAT_MASTER
-#define GOAT_MASTER
-
-class goat_master : public monster
-{
-public:
-    goat_master(int h, int a, string n);
-    void attack(character& PC);
-private:
-};
-
+#ifndef MONSTER
+#define MONSTER
+
+#include <string>
+using std::string;
+#include <iostream>
+using std::cout;
+
+class character;
+
+class monster
+{
+public:
+    monster();
+    monster(int h, int d, string n);
+
+    virtual void attack(character & player)=0;
+
+	int display_hp();
+    string console_display_name();
+
+	void minus_hp(int x);
+	void plus_hp(int x);
+protected:
+    int hp;
+    int damage;
+    string name;
+};
+class vampire_bunny:public monster
+{
+public:
+	vampire_bunny();
+	void attack(character & player);
+private:
+};
+class goat:public monster
+{
+public:
+	goat();
+	void attack(character & player);
+private:
+};
+class annie_the_goat_master:public monster
+{
+public:
+	annie_the_goat_master();
+	void attack(character & player);
+private:
+};
+
 #endif
